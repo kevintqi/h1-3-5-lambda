@@ -1,0 +1,24 @@
+{
+  "name": "create_user",
+  "version": "1.0.0",
+  "description": "Create or Update User",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint index.js src --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "{}"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "btoa": "^1.2.1",
+    "my_db": "file:../../common/my_db",
+    "my_util": "file:../../common/my_util"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  }
+}

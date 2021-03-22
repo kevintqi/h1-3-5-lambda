@@ -1,0 +1,19 @@
+{
+  "name": "my_db",
+  "version": "1.0.0",
+  "description": "Local AWS DynamoDB interfaces",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint index.js src --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {},
+  "dependencies": {
+    "my_aws": "file:../my_aws"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  }
+}

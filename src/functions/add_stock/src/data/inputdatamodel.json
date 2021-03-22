@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Data Entry",
+  "description": "Data schema for any Data entry",
+  "type": "object",
+  "properties": {
+    "category": {
+      "type": "string"
+    },
+    "data" : {
+      "type": "object"
+    }
+  },
+  "required": ["data"]
+}

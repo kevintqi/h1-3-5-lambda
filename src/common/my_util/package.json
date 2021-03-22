@@ -1,0 +1,19 @@
+{
+  "name": "my_util",
+  "version": "1.0.0",
+  "description": "Local utility functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint index.js src --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {},
+  "dependencies": {
+    "jsonschema": "^1.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  }
+}

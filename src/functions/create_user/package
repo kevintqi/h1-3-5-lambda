@@ -1,0 +1,8 @@
+DEPLOY_DIR=$1
+TARGET=$DEPLOY_DIR/create_user.zip
+echo $TARGET
+rm -rf node_modules
+npm install --only=prod
+npm uninstall aws-sdk
+rm -f $TARGET
+zip -q -r $TARGET  index.js package.json src node_modules

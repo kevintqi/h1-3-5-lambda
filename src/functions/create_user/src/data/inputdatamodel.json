@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "User",
+  "description": "Data schema for User",
+  "type": "object",
+  "properties": {
+    "userId": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "string"
+    },
+    "age": {
+      "type": "number"
+    },
+    "picture": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "name": {
+      "type": "object",
+      "properties": {
+        "first": {
+          "type": "string"
+        },
+        "last": {
+          "type": "string"
+        },
+        "alias": {
+          "type": "string"
+        } 
+      },
+      "required": ["first", "last"]
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "street": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "zipcode": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        }
+      },
+      "required": ["street", "city", "state", "zipcode", "country"]
+    }
+  },
+  "required": ["name", "email"]
+}

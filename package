@@ -1,0 +1,26 @@
+#!/bin/bash
+export DEPLOY_DIR=$PWD/deploy
+COMPONENT_LIST=`ls -d src/*/*`
+
+pushd deploy
+rm  -rf *
+popd
+
+for component in $COMPONENT_LIST
+do
+    pushd $component
+    npm install
+    npm run-script eslint
+    popd
+done
+
+for component in $COMPONENT_LIST
+do
+    pushd $component
+    ./package $DEPLOY_DIR
+    popd
+done
+
+pushd deploy
+ls -l *.zip
+popd
