@@ -4,10 +4,6 @@
     "description": "A job created based on customer request",
     "type": "object",
     "properties": {
-      "user-pool-id": {
-        "description": "The unique identifier for a Cognito UserPool",
-        "type": "string"
-      },
       "user-id": {
         "description": "The unique identifier for a user",
         "type": "string"
@@ -17,5 +13,5 @@
         "type": "string"
       }
     },
-    "required": ["user-pool-id", "user-id"]
+    "required": ["user-id"]
   }

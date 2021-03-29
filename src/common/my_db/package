@@ -1,3 +1,2 @@
 rm -rf node_modules
 npm install --only=prod
-npm uninstall aws-sdk
