@@ -2,17 +2,19 @@ const Creator = require('my_db').Creator;
 const btoa = require('btoa');
 const tableParams = require('./data/usertable.json');
 
-class UserCreator extends Creator {
+class UserCreator {
   constructor() {
-    super(tableParams);
+    this.creator = new Creator(tableParams);
   }
 
-  _createData(requestData) {
-    requestData.body.userId = btoa(requestData.body.email);
-    return requestData.body;
-  }
-
-  _filterResult(result) {
+  async run(requestData) {
+    const prefix = 'h1-3-5';
+    await this.creator.createTable(prefix);
+    const data = requestData.body;
+    data.userId = btoa(requestData.body.email);
+    data.portfolio = [];
+    data.history = [];
+    const result = await this.creator.setData(data);
     return {
       userId: result.Item.userId
     };

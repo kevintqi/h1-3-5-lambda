@@ -1,7 +1,7 @@
 const EventHandler = require('my_util').EventHandler;
 const Validator = require('my_util').EventValidator;
 const inputDataModel = require('./src/data/inputdatamodel.json');
-const NewUserCreator = require('./src/compositecreator');
+const NewUserCreator = require('./src/usercreator');
 
 const validator = new Validator();
 const dataHandler = new NewUserCreator();

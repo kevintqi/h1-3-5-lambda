@@ -35,7 +35,7 @@
     },
     "picture": "url to asset",
     "portfolio": ["stockId"],
-    "actionHistory": ["actionId"]
+    "history": [{}]
 }
 ````
 
@@ -48,9 +48,9 @@
     "basePrice": 635.00,
     "triggerPercentage": 15,
     "targetHolding": 250,
-    "currentHolding": 200,
-    "cost": 739.00,
-    "currentPrice": 659.00,
+    "activeHolding": 200,
+    "costPrice": 739.00,
+    "activePrice": 659.00,
     "state": "H3",
     "unit": 50,
     "delta": 95.25,

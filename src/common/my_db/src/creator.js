@@ -4,33 +4,24 @@ const Client = require('./client');
 
 class Creator {
   constructor(tableParams) {
-    this.tableName = tableParams.TableName;
     this.tableParams = tableParams;
     this.client = new Client();
   }
 
-  run(requestData) {
-    this.tableParams.TableName = `${requestData.headers['user-pool-id']}_${this.tableName}`;
+  async createTable(prefix) {
+    this.tableParams.TableName = `${prefix}_${this.tableParams.TableName}`;
     const table = new Table(this.tableParams);
-    return table.exist()
-      .then(() => this._create(requestData))
-      .catch(() => table.create()
-        .then( () => this._create(requestData)));
+    try {
+      return await table.exist();
+    } catch (e) {
+      return await table.create();
+    }
   }
 
-  _create(requestData) {
+  async setData(data) {
     const builder = new DataBuilder(this.tableParams.TableName);
-    const data = this._createData(requestData);
     builder.setData(data);
-    return this.client.put(builder.getItem()).then(result => this._filterResult(result));
-  }
-
-  _createData(requestData) {// eslint-disable-line no-unused-vars
-    throw new Error('_createData not implemented');
-  }
-
-  _filterResult(result) {// eslint-disable-line no-unused-vars
-    throw new Error('_filterResult not implemented');
+    return await this.client.put(builder.getItem());
   }
 }
 

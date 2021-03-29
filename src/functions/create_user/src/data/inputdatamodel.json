@@ -13,16 +13,7 @@
     "phoneNumber": {
       "type": "string"
     },
-    "gender": {
-      "type": "string"
-    },
-    "age": {
-      "type": "number"
-    },
     "picture": {
-      "type": "string"
-    },
-    "role": {
       "type": "string"
     },
     "name": {
@@ -39,28 +30,7 @@
         } 
       },
       "required": ["first", "last"]
-    },
-    "address": {
-      "type": "object",
-      "properties": {
-        "street": {
-          "type": "string"
-        },
-        "city": {
-          "type": "string"
-        },
-        "state": {
-          "type": "string"
-        },
-        "zipcode": {
-          "type": "string"
-        },
-        "country": {
-          "type": "string"
-        }
-      },
-      "required": ["street", "city", "state", "zipcode", "country"]
     }
   },
-  "required": ["name", "email"]
+  "required": ["name", "email", "phoneNumber"]
 }
