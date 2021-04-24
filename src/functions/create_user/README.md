@@ -5,8 +5,7 @@ The function creates a new User with empty Profile and Rights.
 ```json
 {
   "headers": {
-    "user-pool-id": "us-west-2_n3itNahtP",
-    "user-id": "email"
+    "user-id": "any string"
   },
   "body": "{\"name\":{\"first\":\"John\",\"last\":\"Doe\"},\"phoneNumber\":\"1234567\", \"email\":\"y@a.com\"}"
 }
@@ -16,12 +15,11 @@ The function creates a new User with empty Profile and Rights.
 ### URL
 POST /user
 ```
-https://74by8v0zt1.execute-api.us-west-2.amazonaws.com/dev
+https://9t2eciov07.execute-api.us-west-2.amazonaws.com
 ```
 ### Headers
 ```
-user-pool-id:us-west-2_n3itNahtP
-user-id:anyUserId
+user-id:anyString
 ```
 ### Body
 ```json
@@ -32,18 +30,8 @@ user-id:anyUserId
         "first": "John",
         "alias": "Dude"
     },
-    "gender":"M",
-    "age": 30,
-    "address": {
-        "street": "123 Main St",
-        "city": "Torrance",
-        "state": "CA",
-        "zipcode":"90501",
-        "country":"USA"
-    },
     "picture": "url to asset",
-    "phoneNumber":"1234567",
-    "role":"user"
+    "phoneNumber":"1234567"
 }
 ````
 
