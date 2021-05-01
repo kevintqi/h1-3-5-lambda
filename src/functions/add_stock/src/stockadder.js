@@ -39,15 +39,15 @@ class StockAdder {
 
   async _updateUser(stock) {
     const expression = 'set #p = list_append(:vals, #p)';
-    const value = [];
-    value.push(stock.stockId);
-
+    const condition = 'NOT contains(#p, :s)';
     const builder = new UpdateBuilder(userParams.TableName);
     builder
       .setKey({userId:stock.userId})
       .setUpdateExpression(expression)
+      .setConditionExpresion(condition)
       .addExpressionName('#p', 'portfolio')
-      .addExpressionValue(':vals', value);
+      .addExpressionValue(':vals', [stock.stockId])
+      .addExpressionValue(':s', stock.stockId);
     this.client.update(builder.getItem());
   }
 }

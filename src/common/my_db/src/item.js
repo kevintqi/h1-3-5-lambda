@@ -94,6 +94,11 @@ class UpdateBuilder extends ItemBuilder {
     return this;
   }
 
+  setConditionExpresion(value) {
+    this.item.ConditionExpression = value;
+    return this;
+  }
+
   addExpressionName(key, value) {
     this.item.ExpressionAttributeNames = this.item.ExpressionAttributeNames || {};
     this.item.ExpressionAttributeNames[key] = value;
