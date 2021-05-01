@@ -1,10 +1,10 @@
 const EventHandler = require('my_util').EventHandler;
 const Validator = require('my_util').EventValidator;
 const inputDataModel = require('./src/data/inputdatamodel.json');
-const DataAdder = require('./src/dataadder');
+const StockAdder = require('./src/stockadder');
 
 const validator = new Validator();
-const dataHandler = new DataAdder();
+const dataHandler = new StockAdder();
 exports.handler = (event, context, callback) => {
   const eventHandler = new EventHandler(event, callback);
   validator

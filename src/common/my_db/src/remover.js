@@ -10,7 +10,6 @@ class Remover {
   }
 
   run(requestData) {
-    this.tableParams.TableName = `${requestData.headers['user-pool-id']}_${this.tableName}`;
     const table = new Table(this.tableParams);
     return table.exist()
       .then(() => this._remove(requestData));

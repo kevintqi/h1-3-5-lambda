@@ -1,0 +1,15 @@
+{
+    "TableName": "Stock",
+    "KeySchema": [
+      { "AttributeName": "stockId", "KeyType": "HASH" },
+      {"AttributeName": "ticker", "KeyType": "RANGE"}
+    ],
+    "AttributeDefinitions": [
+      { "AttributeName": "stockId", "AttributeType": "S" },
+      { "AttributeName": "ticker", "AttributeType": "S" }
+    ],
+    "ProvisionedThroughput": {
+      "ReadCapacityUnits": 3,
+      "WriteCapacityUnits": 1
+    }
+}

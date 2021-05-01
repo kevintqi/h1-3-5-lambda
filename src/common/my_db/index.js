@@ -9,3 +9,4 @@ exports.UpdateBuilder = require('./src/item').UpdateBuilder;
 exports.ProjectionBuilder = require('./src/item').ProjectionBuilder;
 exports.Creator = require('./src/creator');
 exports.Remover = require('./src/remover');
+exports.Customizer = require('./src/customizer');

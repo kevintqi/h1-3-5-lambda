@@ -8,8 +8,7 @@ class Creator {
     this.client = new Client();
   }
 
-  async createTable(prefix) {
-    this.tableParams.TableName = `${prefix}_${this.tableParams.TableName}`;
+  async createTable() {
     const table = new Table(this.tableParams);
     try {
       return await table.exist();

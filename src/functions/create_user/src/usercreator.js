@@ -1,6 +1,7 @@
 const Creator = require('my_db').Creator;
 const btoa = require('btoa');
-const tableParams = require('./data/usertable.json');
+const Customizer = require('my_db').Customizer;
+const tableParams = Customizer.update(require('./data/usertable.json'));
 
 class UserCreator {
   constructor() {
@@ -8,8 +9,7 @@ class UserCreator {
   }
 
   async run(requestData) {
-    const prefix = 'h1-3-5';
-    await this.creator.createTable(prefix);
+    await this.creator.createTable();
     const data = requestData.body;
     data.userId = btoa(requestData.body.email);
     data.portfolio = [];

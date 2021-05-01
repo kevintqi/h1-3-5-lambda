@@ -4,12 +4,24 @@
   "description": "Data schema for any Data entry",
   "type": "object",
   "properties": {
-    "category": {
+    "ticker": {
       "type": "string"
     },
-    "data" : {
-      "type": "object"
+    "basePrice": {
+      "type": "number"
+    },
+    "triggerPercentage": {
+      "type": "number"
+    },
+    "targetHolding": {
+      "type": "number"
+    },
+    "activeHolding": {
+      "type": "number"
+    },
+    "costPrices": {
+      "type": "number"
     }
   },
-  "required": ["data"]
+  "required": ["ticker", "basePrice", "triggerPercentage", "targetHolding", "activeHolding", "costPrice"]
 }
