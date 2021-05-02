@@ -1,11 +1,9 @@
 {
-    "TableName": "Stock",
+    "TableName": "User",
     "KeySchema": [
-      { "AttributeName": "ticker", "KeyType": "HASH" },
-      {"AttributeName": "userId", "KeyType": "RANGE"}
+      { "AttributeName": "userId", "KeyType": "HASH" }
     ],
     "AttributeDefinitions": [
-      { "AttributeName": "ticker", "AttributeType": "S" },
       { "AttributeName": "userId", "AttributeType": "S" }
     ],
     "ProvisionedThroughput": {

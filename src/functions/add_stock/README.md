@@ -13,7 +13,7 @@ The function adds a new stock and associates it to the user's portfolio
 
 ## Sample REST Request
 ### URL
-POST /portfolio/stock/{userId}
+POST /portfolio/{userId}
 ```
 https://74by8v0zt1.execute-api.us-west-2.amazonaws.com/dev
 ```

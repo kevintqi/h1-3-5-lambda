@@ -42,7 +42,6 @@
 #### Stock
 ````json
 {
-    "stockId": "userId + ticker",
     "userId":"userId",
     "ticker":"TSLA",
     "basePrice": 635.00,

@@ -24,7 +24,6 @@ class StockAdder {
     await this.creator.createTable();
     const data = requestData.body;
     data.userId = requestData.path.userId;
-    data.stockId = `${requestData.body.ticker}_${data.userId}`;
     data.unit = data.targetHolding / 5;
     data.delta = (data.basePrice / 100.0) * data.triggerPercentage;
     if (data.activeHolding > data.unit * 3) {
@@ -46,8 +45,8 @@ class StockAdder {
       .setUpdateExpression(expression)
       .setConditionExpresion(condition)
       .addExpressionName('#p', 'portfolio')
-      .addExpressionValue(':vals', [stock.stockId])
-      .addExpressionValue(':s', stock.stockId);
+      .addExpressionValue(':vals', [stock.ticker])
+      .addExpressionValue(':s', stock.ticker);
     return this.client.update(builder.getItem())
       .catch(err => {
         if (err.code != 'ConditionalCheckFailedException') {
