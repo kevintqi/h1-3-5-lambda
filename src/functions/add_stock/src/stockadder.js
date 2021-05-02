@@ -24,7 +24,7 @@ class StockAdder {
     await this.creator.createTable();
     const data = requestData.body;
     data.userId = requestData.path.userId;
-    data.stockId = data.userId + requestData.body.ticker;
+    data.stockId = `${requestData.body.ticker}_${data.userId}`;
     data.unit = data.targetHolding / 5;
     data.delta = (data.basePrice / 100.0) * data.triggerPercentage;
     if (data.activeHolding > data.unit * 3) {
@@ -42,13 +42,18 @@ class StockAdder {
     const condition = 'NOT contains(#p, :s)';
     const builder = new UpdateBuilder(userParams.TableName);
     builder
-      .setKey({userId:stock.userId})
+      .setKey({ userId: stock.userId })
       .setUpdateExpression(expression)
       .setConditionExpresion(condition)
       .addExpressionName('#p', 'portfolio')
       .addExpressionValue(':vals', [stock.stockId])
       .addExpressionValue(':s', stock.stockId);
-    this.client.update(builder.getItem());
+    return this.client.update(builder.getItem())
+      .catch(err => {
+        if (err.code != 'ConditionalCheckFailedException') {
+          throw err;
+        }
+      });
   }
 }
 

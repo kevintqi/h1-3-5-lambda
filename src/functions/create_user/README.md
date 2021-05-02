@@ -1,12 +1,9 @@
 # AWS Lambda Function - Create User
-The function creates a new User with empty Profile and Rights.
+The function creates a new User with empty Portfolio and History.
 
 ## Sample Test Event
 ```json
 {
-  "headers": {
-    "user-id": "any string"
-  },
   "body": "{\"name\":{\"first\":\"John\",\"last\":\"Doe\"},\"phoneNumber\":\"1234567\", \"email\":\"y@a.com\"}"
 }
 ```
@@ -16,10 +13,6 @@ The function creates a new User with empty Profile and Rights.
 POST /user
 ```
 https://9t2eciov07.execute-api.us-west-2.amazonaws.com
-```
-### Headers
-```
-user-id:anyString
 ```
 ### Body
 ```json

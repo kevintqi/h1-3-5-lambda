@@ -1,12 +1,9 @@
-# AWS Lambda Function - Add Data
-The function adds an new data entry of a given category into the profile of the user 
+# AWS Lambda Function - Add Stock
+The function adds a new stock and associates it to the user's portfolio  
 
 ## Sample Test Event
 ```json
 {
-  "headers": {
-    "user-id": "eUBhLmNvbQ=="
-  },
   "pathParameters": {
     "userId": "eUBhLmNvbQ=="
   },
@@ -16,22 +13,19 @@ The function adds an new data entry of a given category into the profile of the 
 
 ## Sample REST Request
 ### URL
-
-POST /portfolio/{userId}
+POST /portfolio/stock/{userId}
 ```
 https://74by8v0zt1.execute-api.us-west-2.amazonaws.com/dev
-```
-### Headers
-```
-user-id:eUBhLmNvbQ==
 ```
 ### Body
 ```json
 {
-  "data" : {
-    "value": 70,
-    "unit": "kg"
-  }
+  "ticker":"TSLA",
+  "basePrice":635.00, 
+  "triggerPercentage":15, 
+  "targetHolding":250, 
+  "activeHolding":150, 
+  "costPrice":709.0
 }
 ````
 
@@ -39,7 +33,8 @@ user-id:eUBhLmNvbQ==
 ### Body
 ```json
 {
-  "status": "successfulOk"
+  "userId":"eUBhLmNvbQ==",
+  "stockId":"TSLA_eUBhLmNvbQ=="
 }
 ```
 ## Status Code
