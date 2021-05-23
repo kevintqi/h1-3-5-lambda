@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "btoa": "^1.2.1",
+    "md5": "^2.3.0",
     "my_db": "file:../../common/my_db",
     "my_util": "file:../../common/my_util"
   },

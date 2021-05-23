@@ -1,5 +1,5 @@
 const Creator = require('my_db').Creator;
-const btoa = require('btoa');
+const md5 = require('md5');
 const Customizer = require('my_db').Customizer;
 const tableParams = Customizer.update(require('./data/usertable.json'));
 
@@ -11,7 +11,7 @@ class UserCreator {
   async run(requestData) {
     await this.creator.createTable();
     const data = requestData.body;
-    data.userId = btoa(requestData.body.email);
+    data.userId = md5(requestData.body.email);
     data.portfolio = [];
     data.history = [];
     const result = await this.creator.setData(data);

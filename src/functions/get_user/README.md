@@ -5,7 +5,7 @@ The function creates a new User with empty Profile and Rights.
 ```json
 {
   "pathParameters": {
-    "userId": "eUBhLmNvbQ=="
+    "userId": "45841c1e82903cdc21122534909501b3"
   }
 }
 ```
@@ -14,7 +14,7 @@ The function creates a new User with empty Profile and Rights.
 ### URL
 GET /user/{userId}
 ```
-https://74by8v0zt1.execute-api.us-west-2.amazonaws.com/dev
+https://9t2eciov07.execute-api.us-west-2.amazonaws.com
 ```
 
 ## Sample Response

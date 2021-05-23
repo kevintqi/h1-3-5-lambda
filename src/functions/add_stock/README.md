@@ -5,7 +5,7 @@ The function adds a new stock and associates it to the user's portfolio
 ```json
 {
   "pathParameters": {
-    "userId": "eUBhLmNvbQ=="
+    "userId": "45841c1e82903cdc21122534909501b3"
   },
   "body": "{\"ticker\":\"TSLA\",\"basePrice\":635.00, \"triggerPercentage\":15, \"targetHolding\":250, \"activeHolding\":150, \"costPrice\":709.0}"
 }
@@ -15,7 +15,7 @@ The function adds a new stock and associates it to the user's portfolio
 ### URL
 POST /portfolio/{userId}
 ```
-https://74by8v0zt1.execute-api.us-west-2.amazonaws.com/dev
+https://9t2eciov07.execute-api.us-west-2.amazonaws.com
 ```
 ### Body
 ```json
@@ -33,8 +33,8 @@ https://74by8v0zt1.execute-api.us-west-2.amazonaws.com/dev
 ### Body
 ```json
 {
-  "userId":"eUBhLmNvbQ==",
-  "stockId":"TSLA_eUBhLmNvbQ=="
+  "userId":"45841c1e82903cdc21122534909501b3",
+  "stockId":"TSLA_45841c1e82903cdc21122534909501b3"
 }
 ```
 ## Status Code
